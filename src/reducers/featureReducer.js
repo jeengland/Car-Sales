@@ -29,7 +29,15 @@ const reducer = (state = initialState, action) => {
                 }
             };
         case REMOVE_FEATURE:
-            return state;
+            return {
+                ...state,
+                features: [...state.features, action.payload.feature],
+                featureCost: state.featureCost - action.payload.feature.price,
+                car: {
+                    ...state.car,
+                    features: state.car.features.filter((feature) => feature.id !== action.payload.feature.id)
+                }
+            }
         default: 
             return state;
     }
