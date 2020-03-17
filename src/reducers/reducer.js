@@ -5,13 +5,11 @@ const initialState = {
         { id: 3, name: 'Premium sound system', price: 500 },
         { id: 4, name: 'Rear spoiler', price: 250 }
     ],
-    addedFeatures: [],
     featureCost: 0,
     car: {
         price: 26395,
         name: '2019 Ford Mustang',
-        image:
-          'https://cdn.motor1.com/images/mgl/0AN2V/s1/2019-ford-mustang-bullitt.jpg',
+        image: 'https://cdn.motor1.com/images/mgl/0AN2V/s1/2019-ford-mustang-bullitt.jpg',
         features: []
     }, 
 }
@@ -22,3 +20,5 @@ const reducer = (state = initialState, action) => {
             return state;
     }
 }
+
+export default reducer;
